@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Position Types Example</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Container styling */
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f4f4f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    /* Box styling for examples */
+    .box {
+      padding: 20px;
+      margin: 10px 0;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .static-box {
+      background-color: #007bff;
+      position: static;
+    }
+
+    .relative-box {
+      background-color: #28a745;
+      position: relative;
+      top: 10px;
+      left: 20px;
+    }
+
+    .absolute-box {
+      background-color: #dc3545;
+      position: absolute;
+      top: 80px;
+      left: 50px;
+      width: 200px;
+    }
+
+    .fixed-box {
+      background-color: #6f42c1;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 150px;
+    }
+
+    .sticky-box {
+      background-color: #ffc107;
+      position: sticky;
+      top: 10px;
+    }
+
+    /* Wrapper for absolute example */
+    .relative-wrapper {
+      position: relative;
+      height: 200px;
+      background-color: #e9ecef;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>CSS Position Types</h2>
+  
+  <!-- Static position -->
+  <div class="box static-box">
+    Static Position (Default)
+  </div>
+  
+  <!-- Relative position -->
+  <div class="box relative-box">
+    Relative Position (Offset from its normal position)
+  </div>
+  
+  <!-- Wrapper to show Absolute inside a relative container -->
+  <div class="relative-wrapper">
+    <div class="box absolute-box">
+      Absolute Position (Inside relative container)
+    </div>
+  </div>
+
+  <!-- Fixed position -->
+  <div class="box fixed-box">
+    Fixed Position (Fixed to viewport)
+  </div>
+  
+  <!-- Sticky position -->
+  <div class="box sticky-box">
+    Sticky Position (Sticks to top when scrolling)
+  </div>
+</div>
+
+<p style="margin: 50px;">Scroll down to see the sticky box in action.</p>
+<p style="margin: 50px;">Keep scrolling...</p>
+
+</body>
+</html>

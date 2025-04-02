@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="responsive login page.css">
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>login page</title>
+</head>
+<body> <footer>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Signup</h2>
+            <form id="loginForm" onsubmit="return validateForm()">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter Username" required>
+                    <small id="usernameError"></small>
+                </div>
+                <div class="input-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <small id="passwordError"></small>
+                </div>
+                <div class="input-group">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" id="password" placeholder="Re-Enter Password" required>
+                    <small id="passwordError"></small>
+                </div>
+                <button type="submit">Create</button>
+            </form>
+            <p class="signup-text">Already have an account? <a href="user login.html">Login</a></p>
+        </div>
+    </div>
+   
+        <button> <a href="passwordchecker.html">Password Strength checker</button></a>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="responsive login page.css">
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>login page</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="return validateForm()">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter Username" required>
+                    <small id="usernameError"></small>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <small id="passwordError"></small>
+                </div>
+                <button type="submit" onclick="redirectToMainPage()">Login</button>
+            </form>
+            <p class="signup-text">Don't have an account? <a href="user signup.html">Sign up here</a></p>
+        </div>
+    </div>
+
+    
+         <script>
+        function redirectToMainPage() {
+            window.location.href = "Whiskas.html"; // Redirects to index.html
+        }
+    </script>
+    
+</body>
+</html>

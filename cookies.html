@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent Banner</title>
+</head>
+<body>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: #fff; padding: 15px; text-align: center; display: none;">
+        <p style="margin: 0;">
+            This website uses cookies to ensure you get the best experience on our website. 
+            <button id="accept-cookies" style="background-color: #984caf; color: white; border: none; padding: 10px 20px; cursor: pointer;">Accept</button>
+        </p>
+    </div>
+
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Calculate expiration date
+                expires = "; expires=" + date.toUTCString(); // Set expiration
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/"; // Set cookie
+        }
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            var nameEQ = name + "="; // Prepare name for comparison
+            var ca = document.cookie.split(';'); // Split cookie string into individual cookies
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length); // Trim whitespace
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length); // Return cookie value if found
+            }
+            return null; // Return null if cookie not found
+        }
+
+        // Function to check cookie consent and display banner if necessary
+        function checkCookieConsent() {
+            if (!getCookie("cookieConsent")) { // If consent cookie is not set
+                document.getElementById("cookie-banner").style.display = "block"; // Show banner
+            }
+        }
+
+        // Function to handle cookie acceptance
+        function acceptCookies() {
+            setCookie("cookieConsent", "accepted", 1); // Set cookie consent for 30 days
+            document.getElementById("cookie-banner").style.display = "none"; // Hide banner
+        }
+
+        // Event listener for DOMContentLoaded to check cookie consent
+        document.addEventListener("DOMContentLoaded", function() {
+            checkCookieConsent(); // Check for cookie consent when the page loads
+            document.getElementById("accept-cookies").addEventListener("click", acceptCookies); // Set up click event for the accept button
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!-- index.html -->
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content= 
+        "width=device-width, initial-scale=1.0"> 
+    <title>Pagination Example</title> 
+    
+</head> 
+<style>
+    /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 3rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination a {
+    color: #007BFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #007BFF;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.pagination .active {
+    background-color: #007BFF;
+    color: white;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+p {
+    font-size: 14px;
+}
+
+#page-numbers {
+    margin-top: 20px;
+    font-size: 16px;
+}
+.card {
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      background-color: rgb(255, 219, 244);
+    }
+
+    .card img {
+      margin: 10px auto;
+      width: 60%;
+      display: block;
+
+    }
+    
+    .cardBody:hover .overlay {
+      height: 90%;
+    
+    }
+    h1{
+        text-align: center;
+        font-size: 40px;
+        font-weight: 1000;
+    }
+</style>
+<body> 
+    <div id="data-container"> 
+        <h1> Whiskas Dry Foods</h1> 
+        <div class="card-container"> 
+            <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/18853301006993-product-image-1_0.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Adult Dry Food, Chicken</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/18853301007853-product-image-1.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Adult Dry Food, Grilled Saba</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/8853301002493-product-image-1.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Adult Dry Food, Mackerel</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/19310022715201-product-image-1.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Adult Dry Food, Ocean Fish</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/19310022715102-product-image-1.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Adult Dry Food, Tuna Fish</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/18853301005781-product-image-1.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Hairball Control Adult Dry Food</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/18853301006528-product-image-1_0.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Adult Dry Food, Mackerel</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+              <div class="card ">
+                <div class="cardBody"> <!-------cardbody   -->
+      
+                  <img src="https://www.whiskas.in/cdn-cgi/image/width=410,format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-09/18853301140819-product-image-1_0.png" alt=""
+                    style="height: 200px;">  <!-------1  -->
+                  <h5 style="text-align: center;">Kitten Dry Food, Ocean Fish with Milk</h5>
+                  
+                </div>
+                <div class="button">
+                  <a style="width: 100%;" href="Popup.html" class="btn btn-info">BUY NOW</a> <!-------cardbody   crtl akf -->
+                </div>
+              </div>
+            <!-- Add more cards as needed -->
+            
+        </div> 
+    </div> 
+
+    <div class="pagination" id="pagination"> 
+        <a href="#" id="prev">Previous</a> 
+        <a href="#" class="page-link" data-page="1">1</a> 
+        <a href="#" class="page-link" data-page="2">2</a>  
+        <a href="#" id="next">Next</a> 
+        <p id="page-numbers"> </p> 
+    </div> 
+
+    <script> 
+        //script.js 
+const cardsPerPage = 4; // Number of cards to show per page 
+const dataContainer = document.getElementById('data-container'); 
+const pagination = document.getElementById('pagination'); 
+const prevButton = document.getElementById('prev'); 
+const nextButton = document.getElementById('next'); 
+const pageNumbers = document.getElementById('page-numbers'); 
+const pageLinks = document.querySelectorAll('.page-link'); 
+
+const cards = 
+    Array.from(dataContainer.getElementsByClassName('card')); 
+
+// Calculate the total number of pages 
+const totalPages = Math.ceil(cards.length / cardsPerPage); 
+let currentPage = 1; 
+
+// Function to display cards for a specific page 
+function displayPage(page) { 
+    const startIndex = (page - 1) * cardsPerPage; 
+    const endIndex = startIndex + cardsPerPage; 
+    cards.forEach((card, index) => { 
+        if (index >= startIndex && index < endIndex) { 
+            card.style.display = 'block'; 
+        } else { 
+            card.style.display = 'none'; 
+        } 
+    }); 
+} 
+
+// Function to update pagination buttons and page numbers 
+function updatePagination() { 
+    pageNumbers.textContent = 
+        `Page ${currentPage} of ${totalPages}`; 
+    prevButton.disabled = currentPage === 1; 
+    nextButton.disabled = currentPage === totalPages; 
+    pageLinks.forEach((link) => { 
+        const page = parseInt(link.getAttribute('data-page')); 
+        link.classList.toggle('active', page === currentPage); 
+    }); 
+} 
+
+// Event listener for "Previous" button 
+prevButton.addEventListener('click', () => { 
+    if (currentPage > 1) { 
+        currentPage--; 
+        displayPage(currentPage); 
+        updatePagination(); 
+    } 
+}); 
+
+// Event listener for "Next" button 
+nextButton.addEventListener('click', () => { 
+    if (currentPage < totalPages) { 
+        currentPage++; 
+        displayPage(currentPage); 
+        updatePagination(); 
+    } 
+}); 
+
+// Event listener for page number buttons 
+pageLinks.forEach((link) => { 
+    link.addEventListener('click', (e) => { 
+        e.preventDefault(); 
+        const page = parseInt(link.getAttribute('data-page')); 
+        if (page !== currentPage) { 
+            currentPage = page; 
+            displayPage(currentPage); 
+            updatePagination(); 
+        } 
+    }); 
+}); 
+
+// Initial page load 
+displayPage(currentPage); 
+updatePagination();
+
+    </script> 
+</body> 
+
+</html>

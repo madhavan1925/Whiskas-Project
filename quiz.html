@@ -1,0 +1,203 @@
+<!--highscore.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" 
+          content="width=device-width,
+                   initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="./style.css" />
+       <script src="./highScore.js"></script>
+    <title>Code Quiz - High Scores</title>
+</head>
+<style>
+     /* Style.css */
+
+ * {
+     font-family: Georgia, Times, "Times New Roman", serif;
+ }
+
+ .quiz,
+ .scores {
+     margin: 50px auto 0 auto;
+     max-width: 400px;
+ }
+
+ #top {
+     color: green;
+ }
+
+ .containerNew {
+     border: 5px solid;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     height: 580px;
+     width: 50%;
+     transform: translate(-50%, -50%);
+     padding: 10px;
+ }
+
+ p {
+     margin: 15px 15px;
+ }
+
+ .landing {
+     text-align: center;
+ }
+
+ .scoresHeader {
+     position: absolute;
+     top: 15px;
+     left: 15px;
+ }
+
+ .timer {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+ }
+
+ button {
+     display: inline-block;
+     margin: 10px;
+     cursor: pointer;
+     color: #fff;
+     background-color: #d4009f;
+     border-radius: 5px;
+     border: 0;
+     padding: 20px;
+ }
+
+ button:hover {
+     background-color: #000000;
+ }
+
+ .options button {
+     display: block;
+ }
+
+ input[type="text"] {
+     font-size: 100%;
+ }
+
+ .hide {
+     display: none;
+ }
+
+ .feedback {
+     font-style: bold;
+     font-size: 120%;
+     margin-top: 20px;
+     padding-top: 15px;
+     color: #fff;
+     border-top: 2px solid #4B0082;
+ }
+
+ ol {
+     padding-left: 15px;
+     max-height: 600px;
+     overflow: auto;
+ }
+
+ li {
+     padding: 5px;
+     list-style: decimal inside none;
+ }
+
+ li:nth-child(odd) {
+     background-color: #dfdae7;
+ }
+
+ @media screen and (max-width: 768px) {
+     .containerNew {
+         width: 80%;
+     }
+ }
+
+ @media screen and (max-width: 575px) {
+     .containerNew {
+         width: 90%;
+     }
+
+     .quiz,
+     .scores {
+         max-width: 90%;
+     }
+ }
+
+</style>
+<body style="background-color: darkorchid;">
+    <div class="scores">
+        <h1>Highscores</h1>
+        <ol id="highscores"></ol>
+        <a href="quiz1.html">
+            <button>
+                Re-Start
+            </button>
+        </a>
+        <button id="clear">
+            Clear Highscores
+        </button>
+    </div>
+
+
+<script>
+    // highScore.js
+
+let scoresBtn = document.querySelector(
+"#view-high-scores"
+);
+
+// Rank previous scores in order by
+// Retrieving scores from localStorage
+
+function printHighscores() {
+let highscores =
+    JSON.parse(
+        window.localStorage.getItem(
+            "highscores"
+        )
+    ) || [];
+highscores.sort(function (a, b) {
+    return b.score - a.score;
+});
+highscores.forEach(function (
+    score
+) {
+    let liTag =
+        document.createElement(
+            "li"
+        );
+    liTag.textContent =
+        score.name +
+        " - " +
+        score.score;
+    let olEl =
+        document.getElementById(
+            "highscores"
+        );
+    olEl.appendChild(liTag);
+});
+}
+
+// Clear previous scores when users click clear
+function clearHighscores() {
+window.localStorage.removeItem(
+    "highscores"
+);
+window.location.reload();
+}
+document.getElementById(
+"clear"
+).onclick = clearHighscores;
+
+printHighscores();
+
+</script>
+</body>
+
+</html>

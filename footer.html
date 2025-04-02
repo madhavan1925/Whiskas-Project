@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        footer {
+            background-color: #71127D;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 180px;
+            margin-right: 20px;
+        }
+        .footer-column h4 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin-right: 10px;
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            border-top: 1px solid #fff;
+            padding-top: 20px;
+        }
+        .footer-bottom div {
+            display: flex;
+            align-items: center;
+        }
+        .footer-bottom a {
+            margin-right: 20px;
+        }
+        .copyright {
+            font-size: 0.9em;
+        }
+        .cookies-button {
+            background-color: #FDBA12;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+            color: #71127D;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="footer-columns">
+        <div class="footer-column">
+            <h4>WHISKAS®</h4>
+            <ul>
+                <li><a href="#">About WHISKAS®</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Find a store</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Our Products</h4>
+            <ul>
+                <li><a href="#">Kitten</a></li>
+                <li><a href="#">1+ years</a></li>
+                <li><a href="#">Dry food</a></li>
+                <li><a href="#">Wet food</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Catsan</h4>
+            <ul>
+                <li><a href="#">Catsan Hygiene Plus</a></li>
+                <li><a href="#">Non Clumping Litter</a></li>
+                <li><a href="#">Catsan Ultra Odour</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Kittens</a></li>
+                <li><a href="#">1+ years</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><img src="https://freepnglogo.com/images/all_img/facebook-circle-logo-png.png" alt="Facebook"></a>
+                <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png" alt="Twitter"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+                <a href="#"><img src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div>
+            <a href="#">Privacy</a>
+            <a href="#">Cookies</a>
+            <a href="#">Legal</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <button class="cookies-button">Cookies Settings</button>
+    </div>
+    
+    <div class="copyright">
+        Copyright © Mars 2024 WHISKAS®, Trademark of Mars Incorporated and its affiliates
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskas</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         .fixed-box {
+      background-color: #e9e6ef;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      width: 350px;
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the chat box */
+.chat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: #ffa0fc;
+}
+
+/* Chat box styling */
+.chat-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #fe11cf;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-messages {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.user-message {
+  background-color: #d1e7dd;
+  text-align: right;
+}
+
+.bot-message {
+  background-color: #f8d7da;
+  text-align: left;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #555;
+}
+
+
+        .notification {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0; /* Positioned at the top */
+            left: 50%;
+            transform: translateX(-50%); /* Center the notification horizontally */
+            background-color: #6a0dad; /* Purple background */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000; /* Ensure it appears above other content */
+            transition: opacity 0.5s ease; /* Smooth transition for appearance */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notification" id="notification">
+        Thanks for choosing Whiskas <br> Click to dismiss.
+    </div>
+    <div class="container-fluid">
+        <div class="row mt-1">
+            <div class="col1-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #cf12b3">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="Whiskas.html" style="width: 698px;"><img
+                                src="https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2051/files/logo_whiskas.png"
+                                alt=""></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" style="color:aliceblue;font-size: 20px;" aria-current="page"  href="product.html">Our
+                                        Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color:aliceblue;font-size: 20px;" href="kitten types3.html">Kittens</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: aliceblue;font-size: 20px;" href="cat breed.html">Cat Breeds</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: aliceblue;font-size: 20px;" href="1+year1.html">1+years</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: aliceblue;font-size: 20px;" href="user login.html">Login</a>
+                                </li>
+                            </ul>
+
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>𝗖𝗵𝗼𝗼𝘀𝗲 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝗲𝘀</option>
+                                    <option value="1">Kitten</option>
+                                    <option value="2">Adult</option>
+                                </select>
+                                <label for="floatingSelect">selects</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="image"><img src="https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-05/home-adult-hero.jpg"
+            alt=""></div>
+    
+            <div class="box fixed-box">
+                <div class="chat-container">
+                    <div class="chat-box">
+                      <div class="chat-header">🐈‍⬛Ask Me a Question🐈‍⬛</div>
+                      <div class="chat-messages" id="chat-messages"></div>
+                      <div class="chat-input">
+                        <input type="text" id="user-input" placeholder="Type your question here...">
+                        <button onclick="sendMessage()">Send</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.zigly.com/media/amasty/shopby/option_images/Whiskas-1920x400.jpg"
+                        class="d-block w-100" alt="..." style="height: 700px;">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2051/files/2022-05/home-kitten-hero.jpg"
+                        class="d-block w-100" alt="..." style="height: 700px;">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.whiskas.com.au/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf1516/files/2024-08/E03156337_MARS_Whiskas-Tasty-Mix-Web-Banners_1920x600-_Jun24_FA.jpg"
+                        class="d-block w-100" alt="..." style="height: 700px;">
+
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div> <br>
+        <marquee behavior="scroll" direction="left"><h1>🐈💨Sale is Live 20% OFF on kitten Food!!!🐈💨</h1></marquee>
+        <footer>
+           
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>WHISKAS®</h4>
+                    <ul>
+                        <li><a href="about us.html">About WHISKAS®</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#">Find a store</a></li>
+                        <li><a href="customer.html">Customer Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Products</h4>
+                    <ul>
+                        <li><a href="kitten types3.html">Kitten</a></li>
+                        <li><a href="1+year1.html">1+ years</a></li>
+                        <li><a href="dry.html">Dry food</a></li>
+                        <li><a href="wetfoods.html">Wet food</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Catsan</h4>
+                    <ul>
+                        <li><a href="catsun.html">Catsan Hygiene Plus</a></li>
+                        <li><a href="#">Non Clumping Litter</a></li>
+                        <li><a href="#">Catsan Ultra Odour</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Kittens</a></li>
+                        <li><a href="#">1+ years</a></li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/WhiskasIndia"><img src="https://freepnglogo.com/images/all_img/facebook-circle-logo-png.png" alt="Facebook"></a>
+                        <a href="https://x.com/WhiskasIndia?mx=2"><img src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png" alt="Twitter"></a>
+                        <a href="https://www.youtube.com/channel/UCoZr45cc-lmouTm39rt8hmg"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/whiskasindia/"><img src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <div>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Accessibility</a>
+                    <a href="contact us.html">Contact Us</a> <br>
+                    <button onclick="redirectToMainPage()" class="cookies-button">Take a QUIZ</button>
+                </div>
+                
+            </div>
+            
+            <div class="copyright">
+                Copyright © Mars 2024 WHISKAS®, Trademark of Mars Incorporated and its affiliates
+            </div>
+        </footer>
+    </div> <br>
+    <script>
+        // Function to send a message
+    function sendMessage() {
+      const userInput = document.getElementById("user-input");
+      const messageContainer = document.getElementById("chat-messages");
+    
+      if (userInput.value.trim() === "") return;
+    
+      // Add user message to the chat
+      const userMessage = document.createElement("div");
+      userMessage.classList.add("message", "user-message");
+      userMessage.textContent = userInput.value;
+      messageContainer.appendChild(userMessage);
+    
+      // Scroll to the latest message
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+    
+      // Clear input field
+      const question = userInput.value;
+      userInput.value = "";
+    
+      // Simulate bot response
+      setTimeout(() => {
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("message", "bot-message");
+        botMessage.textContent = getBotResponse(question);
+        messageContainer.appendChild(botMessage);
+    
+        // Scroll to the latest message
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+      }, 500);
+    }
+    
+    // Function to get a response from the bot
+    function getBotResponse(question) {
+      // Example of simple responses (you can expand this logic)
+      const responses = {
+        "hello": "Hello there! How can I assist you today?",
+        "how are you": "I'm just a bot, but I'm here to help!",
+        "can i suggest this food for my kitten": "yes, you may give this food for your kitten",
+        "default": "I'm here to answer your questions. Try asking something else!"
+      };
+    
+      // Return response if question matches, otherwise return default response
+      return responses[question.toLowerCase()] || responses["default"];
+    }
+    
+      // Function to show the notification
+      function showNotification() {
+            const notification = document.getElementById("notification");
+            notification.style.display = "block"; // Show the notification
+            notification.style.opacity = "1"; // Set opacity to fully visible
+        }
+
+        // Close the notification when clicked
+        document.getElementById("notification").addEventListener("click", function() {
+            this.style.opacity = "0"; // Fade out
+            setTimeout(() => {
+                this.style.display = "none"; // Hide after fade out
+            }, 500); // Match the duration of the fade out
+        });
+
+        // Show the notification after a short delay
+        window.onload = function() {
+            setTimeout(showNotification, 1000); // Show notification after 1 second
+        };
+
+        function redirectToMainPage() {
+            window.location.href = "quiz1.html"; // Redirects to index.html
+        }
+    </script>
+    
+</body>
+
+</html>
